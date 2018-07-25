@@ -1,5 +1,8 @@
 
 var button = document.getElementById("highlight");
+
+
+
 button.addEventListener("click", function() {
 	//console.log("button pressed");
 	params = {
