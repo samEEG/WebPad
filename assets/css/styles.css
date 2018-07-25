@@ -1,3 +1,14 @@
-.highlight {
-	body: yellow;
+button {
+
+	text-transform: uppercase;
+	height: 100%; 
+	font-weight: 700; 
+	color: steelblue;
+	font-size: inherit;
+
+}
+
+#container {
+	text-align:center;
+	margin:auto;
 }

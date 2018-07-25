@@ -5,15 +5,21 @@ console.log("Chrome Extension go");
 var selectedText = ""; 
 
 function gotMessage(request, sender, sendResponse) {
-	console.log(request.txt);
+	console.log(request.txt);			
+	var selection= window.getSelection().getRangeAt(0);
+	var selectedText = selection.extractContents();
+	var span= document.createElement("span");
 	if(request.txt === "highlight") {	
-			var selection= window.getSelection().getRangeAt(0);
-			var selectedText = selection.extractContents();
-			var span= document.createElement("span");
-			span.style.backgroundColor = "yellow";
-			span.appendChild(selectedText);
-			selection.insertNode(span);
+		span.style.backgroundColor = "yellow";
 	}
+	else if(request.txt == "bold") {
+		span.style.fontWeight = 'bold';
+	}
+	else if(request.txt == "italic") {
+		span.style.fontStyle = "italic"
+	}
+	span.appendChild(selectedText);
+	selection.insertNode(span);
 }
 
 
